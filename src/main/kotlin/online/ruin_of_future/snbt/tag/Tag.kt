@@ -28,7 +28,6 @@ class Tag(val id: TagId, var value: Any?) {
                 is ByteArray -> Tag(TagId.BYTE_ARRAY, v)
                 is String -> Tag(TagId.STRING, v)
                 is List<*> -> Tag(TagId.LIST, v)
-                is Tag -> Tag(TagId.COMPOUND, v)
                 is IntArray -> Tag(TagId.INT_ARRAY, v)
                 is LongArray -> Tag(TagId.LONG_ARRAY, v)
                 is Map<*, *> -> Tag(TagId.COMPOUND, v)
@@ -53,6 +52,24 @@ class Tag(val id: TagId, var value: Any?) {
         }
         val map = value as Map<*, *>
         return (map[key] as Tag?)
+    }
+
+    override fun equals(other: Any?): Boolean {
+        if (this === other) return true
+        if (javaClass != other?.javaClass) return false
+
+        other as Tag
+
+        if (id != other.id) return false
+        if (value != other.value) return false
+
+        return true
+    }
+
+    override fun hashCode(): Int {
+        var result = id.hashCode()
+        result = 31 * result + (value?.hashCode() ?: 0)
+        return result
     }
 }
 
