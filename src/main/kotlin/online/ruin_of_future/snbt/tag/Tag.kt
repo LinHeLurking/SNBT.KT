@@ -71,5 +71,138 @@ class Tag(val id: TagId, var value: Any?) {
         result = 31 * result + (value?.hashCode() ?: 0)
         return result
     }
+
+    fun toByteOrNull(): Byte? {
+        return if (id == TagId.BYTE) {
+            value as Byte
+        } else {
+            null
+        }
+    }
+
+    fun toByte(): Byte {
+        return toByteOrNull() ?: throw TagConvertException(id, Byte::class)
+    }
+
+    fun toShortOrNull(): Short? {
+        return if (id == TagId.SHORT) {
+            value as Short
+        } else {
+            null
+        }
+    }
+
+    fun toShort(): Short {
+        return toShortOrNull() ?: throw TagConvertException(id, Short::class)
+    }
+
+    fun toIntOrNull(): Int? {
+        return if (id == TagId.INT) {
+            value as Int
+        } else {
+            null
+        }
+    }
+
+
+    fun toInt(): Int {
+        return toIntOrNull() ?: throw TagConvertException(id, Int::class)
+    }
+
+    fun toLongOrNull(): Long? {
+        return if (id == TagId.LONG) {
+            value as Long
+        } else {
+            null
+        }
+    }
+
+    fun toLong(): Long {
+        return toLongOrNull() ?: throw TagConvertException(id, Long::class)
+    }
+
+    fun toFloatOrNull(): Float? {
+        return if (id == TagId.FLOAT) {
+            value as Float
+        } else {
+            null
+        }
+    }
+
+    fun toFloat(): Float {
+        return toFloatOrNull() ?: throw TagConvertException(id, Float::class)
+    }
+
+    fun toDoubleOrNull(): Double? {
+        return if (id == TagId.DOUBLE) {
+            value as Double
+        } else {
+            null
+        }
+    }
+
+    fun toDouble(): Double {
+        return toDoubleOrNull() ?: throw TagConvertException(id, Double::class)
+    }
+
+    fun toByteArrayOrNull(): ByteArray? {
+        return if (id == TagId.BYTE_ARRAY) {
+            value as ByteArray
+        } else {
+            null
+        }
+    }
+
+    fun toByteArray(): ByteArray {
+        return toByteArrayOrNull() ?: throw TagConvertException(id, ByteArray::class)
+    }
+
+    fun toIntArrayOrNull(): IntArray? {
+        return if (id == TagId.INT_ARRAY) {
+            value as IntArray
+        } else {
+            null
+        }
+    }
+
+    fun toIntArray(): IntArray {
+        return toIntArrayOrNull() ?: throw TagConvertException(id, IntArray::class)
+    }
+
+    fun toLongArrayOrNull(): LongArray? {
+        return if (id == TagId.LONG_ARRAY) {
+            value as LongArray
+        } else {
+            null
+        }
+    }
+
+    fun toLongArray(): LongArray {
+        return toLongArrayOrNull() ?: throw TagConvertException(id, LongArray::class)
+    }
+
+    fun toListOrNull(): List<Tag>? {
+        return if (id == TagId.LIST) {
+            value as List<Tag>
+        } else {
+            null
+        }
+    }
+
+    fun toList(): List<Tag> {
+        return toListOrNull() ?: throw TagConvertException(id, List::class)
+    }
+
+    fun toMapOrNull(): Map<String, Tag>? {
+        return if (id == TagId.COMPOUND) {
+            value as Map<String, Tag>
+        } else {
+            null
+        }
+    }
+
+    fun toMap(): Map<String, Tag> {
+        return toMapOrNull() ?: throw TagConvertException(id, Map::class)
+    }
 }
 
