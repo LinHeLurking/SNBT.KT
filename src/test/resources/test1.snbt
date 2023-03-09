@@ -1,0 +1,46 @@
+# Copied from https://github.com/FTBTeam/FTB-Library/blob/1.19/main/common/src/test/resources/snbt_test.snbt
+# Some fields are modified.
+# A completely fucked version of this config file:
+#  - too many commas
+#  - not enough commas
+#  - too many spaces/newlines
+#  - mixed " and ' in lists
+
+
+    {
+
+	  test_string: "value"
+	 "test string key": 'value "2"'
+	testInt = 1234
+	testLong: 304993938434993L,
+	,,  ,,
+	,
+	testBool: true,
+	testFloat: 40402.4F
+
+	testDouble: -∞
+	testShort: 49S
+	// comment
+	testByte: -124B
+	intArray: [I;-94 49,29]
+	byteArray: [   B       ;     -94B,    49b   , 29B,,,]
+	longArray: [L;
+	  404049L
+	  -34348L ]
+	"another test string": "he\nll\\o",
+	testList: [
+    	  "a@+0- \"string\" Lat's 1"
+    	  'b $%*& "string" 2'
+    	  "c $##@! 'string' 3"
+    	]
+    testCompound: {
+        s1: 5
+        s2: "hello!"
+        s3: -4.435345e-2d
+    }
+    testListCompound: [
+        { item: "name1", count: 6 }
+        { item: "name2", count: 3 }
+        { item: "name3", count: 5 }
+    ]
+}
