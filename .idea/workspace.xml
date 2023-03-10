@@ -5,11 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4d28b922-adfa-445c-bb6f-34b9a18ba49a" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/online/ruin_of_future/snbt/parser/SnbtParser.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/online/ruin_of_future/snbt/parser/SnbtParser.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/online/ruin_of_future/snbt/parser/SpecialTag.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/online/ruin_of_future/snbt/parser/SpecialTag.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/online/ruin_of_future/snbt/tag/Tag.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/online/ruin_of_future/snbt/tag/Tag.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/online/ruin_of_future/snbt/tag/SnbtTag.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/online/ruin_of_future/snbt/TestParser.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/online/ruin_of_future/snbt/TestParser.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,30 +29,34 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectId" id="2Mj6OThIxC2uuksw3sNNkA0Wwnp" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;AndroidSdkUpdater&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "com.maddyhome.idea.vim.ui.VimEmulationConfigurable",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\KtSnbt\KtSnbt\src\test\resources" />
@@ -102,7 +103,8 @@
       <workItem from="1678268618632" duration="5644000" />
       <workItem from="1678274490879" duration="648000" />
       <workItem from="1678342321822" duration="15873000" />
-      <workItem from="1678430007966" duration="271000" />
+      <workItem from="1678430007966" duration="837000" />
+      <workItem from="1678430876788" duration="1138000" />
     </task>
     <servers />
   </component>

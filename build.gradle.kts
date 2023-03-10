@@ -3,7 +3,7 @@ plugins {
 }
 
 group = "online.ruin_of_future"
-version = "1.0-SNAPSHOT"
+version = "0.1.0"
 
 repositories {
     mavenCentral()
