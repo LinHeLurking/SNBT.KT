@@ -1,3 +1,3 @@
-package online.ruin_of_future.snbt.parser
+package io.github.linhelurking.snbt.parser
 
 class ParseException(detail: String) : Exception(detail)

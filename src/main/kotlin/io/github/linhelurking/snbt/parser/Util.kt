@@ -1,6 +1,6 @@
-package online.ruin_of_future.snbt.parser
+package io.github.linhelurking.snbt.parser
 
-import online.ruin_of_future.snbt.tag.TagId
+import io.github.linhelurking.snbt.tag.TagId
 
 fun isSimpleChar(c: Char): Boolean {
     return c.isLetterOrDigit() || c == '.' || c == '_' || c == '-' || c == '+' || c == '∞'

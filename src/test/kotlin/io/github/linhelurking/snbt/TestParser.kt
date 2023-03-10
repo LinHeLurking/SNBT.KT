@@ -1,8 +1,8 @@
-package online.ruin_of_future.snbt
+package io.github.linhelurking.snbt
 
-import online.ruin_of_future.snbt.parser.SnbtParser
-import online.ruin_of_future.snbt.tag.SnbtTag
-import online.ruin_of_future.snbt.tag.TagId
+import io.github.linhelurking.snbt.parser.SnbtParser
+import io.github.linhelurking.snbt.tag.SnbtTag
+import io.github.linhelurking.snbt.tag.TagId
 import org.junit.jupiter.api.Test
 import java.io.BufferedReader
 import java.io.InputStreamReader

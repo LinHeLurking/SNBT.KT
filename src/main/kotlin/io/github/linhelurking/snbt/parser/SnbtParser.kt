@@ -3,10 +3,10 @@
 * https://github.com/FTBTeam/FTB-Library/blob/1.19/main/common/src/main/java/dev/ftb/mods/ftblibrary/snbt/SNBTParser.java
 * */
 
-package online.ruin_of_future.snbt.parser
+package io.github.linhelurking.snbt.parser
 
-import online.ruin_of_future.snbt.tag.SnbtTag
-import online.ruin_of_future.snbt.tag.TagId
+import io.github.linhelurking.snbt.tag.SnbtTag
+import io.github.linhelurking.snbt.tag.TagId
 import java.io.File
 import java.io.FileNotFoundException
 

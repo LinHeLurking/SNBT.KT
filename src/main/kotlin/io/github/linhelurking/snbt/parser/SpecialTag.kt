@@ -1,6 +1,6 @@
-package online.ruin_of_future.snbt.parser
+package io.github.linhelurking.snbt.parser
 
-import online.ruin_of_future.snbt.tag.SnbtTag
+import io.github.linhelurking.snbt.tag.SnbtTag
 
 object SpecialTags {
     val TRUE = SnbtTag.valueOf(true)

@@ -1,4 +1,4 @@
-package online.ruin_of_future.snbt.tag
+package io.github.linhelurking.snbt.tag
 
 enum class TagId {
     END, BYTE, SHORT, INT, LONG, FLOAT,
