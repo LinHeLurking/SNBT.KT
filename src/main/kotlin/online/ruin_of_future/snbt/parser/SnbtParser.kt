@@ -5,7 +5,7 @@
 
 package online.ruin_of_future.snbt.parser
 
-import online.ruin_of_future.snbt.tag.Tag
+import online.ruin_of_future.snbt.tag.SnbtTag
 import online.ruin_of_future.snbt.tag.TagId
 import java.io.File
 import java.io.FileNotFoundException
@@ -42,7 +42,7 @@ class SnbtParser(lines: Iterable<String>) {
     /*
     * Read all contents as a CompoundTag
     * */
-    fun read(): Tag {
+    fun read(): SnbtTag {
         return readTag(nextNonSpace())
     }
 
@@ -114,18 +114,18 @@ class SnbtParser(lines: Iterable<String>) {
         }
     }
 
-    private fun readTag(first: Char): Tag {
+    private fun readTag(first: Char): SnbtTag {
         when (first) {
             '{' -> return readCompound()
             '[' -> return readCollection()
-            '"' -> return Tag.valueOf(readQuotedString('"'))
-            '\'' -> return Tag.valueOf(readQuotedString('\''))
+            '"' -> return SnbtTag.valueOf(readQuotedString('"'))
+            '\'' -> return SnbtTag.valueOf(readQuotedString('\''))
         }
 
         return when (val s = readUnQuotedString(first)) {
             "true" -> SpecialTags.TRUE
             "false" -> SpecialTags.FALSE
-            "null", "end", "END" -> Tag.END_INSTANCE
+            "null", "end", "END" -> SnbtTag.END_INSTANCE
             "Infinity", "Infinityd", "+Infinity", "+Infinityd", "∞", "∞d", "+∞", "+∞d" -> SpecialTags.POS_INFINITY_D
             "-Infinity", "-Infinityd", "-∞", "-∞d" -> SpecialTags.NEG_INFINITY_D
             "Infinityf", "+Infinityf", "∞f", "+∞f" -> SpecialTags.POS_INFINITY_F
@@ -133,18 +133,18 @@ class SnbtParser(lines: Iterable<String>) {
             "NaN", "NaNd" -> SpecialTags.NAN_D;
             "NaNf" -> SpecialTags.NAN_F
             else -> when (getNumberType(s)) {
-                TagId.BYTE -> Tag.valueOf(parseNumber<Byte>(s))
-                TagId.SHORT -> Tag.valueOf(parseNumber<Short>(s))
-                TagId.INT -> Tag.valueOf(parseNumber<Int>(s))
-                TagId.LONG -> Tag.valueOf(parseNumber<Long>(s))
-                TagId.FLOAT -> Tag.valueOf(parseNumber<Float>(s))
-                TagId.DOUBLE -> Tag.valueOf(parseNumber<Double>(s))
-                else -> Tag.valueOf(s)
+                TagId.BYTE -> SnbtTag.valueOf(parseNumber<Byte>(s))
+                TagId.SHORT -> SnbtTag.valueOf(parseNumber<Short>(s))
+                TagId.INT -> SnbtTag.valueOf(parseNumber<Int>(s))
+                TagId.LONG -> SnbtTag.valueOf(parseNumber<Long>(s))
+                TagId.FLOAT -> SnbtTag.valueOf(parseNumber<Float>(s))
+                TagId.DOUBLE -> SnbtTag.valueOf(parseNumber<Double>(s))
+                else -> SnbtTag.valueOf(s)
             }
         }
     }
 
-    private fun readArray(p: Int, type: Char): Tag {
+    private fun readArray(p: Int, type: Char): SnbtTag {
         val supportedTypes = arrayOf('b', 'B', 'i', 'I', 'l', 'L')
         if (type !in supportedTypes) {
             throw ParseException("${posString(p)}: illegal type specifier when parsing numeric array")
@@ -158,9 +158,9 @@ class SnbtParser(lines: Iterable<String>) {
 
             if (c == ']') {
                 when (type) {
-                    'b', 'B' -> return Tag.valueOf(bytes.toByteArray())
-                    'i', 'I' -> return Tag.valueOf(ints.toIntArray())
-                    'l', 'L' -> return Tag.valueOf(longs.toLongArray())
+                    'b', 'B' -> return SnbtTag.valueOf(bytes.toByteArray())
+                    'i', 'I' -> return SnbtTag.valueOf(ints.toIntArray())
+                    'l', 'L' -> return SnbtTag.valueOf(longs.toLongArray())
                 }
             } else if (c == ',') {
                 continue
@@ -180,13 +180,13 @@ class SnbtParser(lines: Iterable<String>) {
         }
     }
 
-    private fun readList(): Tag {
-        val list = mutableListOf<Tag>()
+    private fun readList(): SnbtTag {
+        val list = mutableListOf<SnbtTag>()
         while (true) {
             val c = nextNonSpace()
 
             if (c == ']') {
-                return Tag.valueOf(list)
+                return SnbtTag.valueOf(list)
             } else if (c == ',') {
                 continue
             }
@@ -196,7 +196,7 @@ class SnbtParser(lines: Iterable<String>) {
         }
     }
 
-    private fun readCollection(): Tag {
+    private fun readCollection(): SnbtTag {
         val prevPos = pos
         val next1 = nextNonSpace()
         val next2 = nextNonSpace()
@@ -209,13 +209,13 @@ class SnbtParser(lines: Iterable<String>) {
         }
     }
 
-    private fun readCompound(): Tag {
-        val map = mutableMapOf<String, Tag>()
+    private fun readCompound(): SnbtTag {
+        val map = mutableMapOf<String, SnbtTag>()
         while (true) {
             val c = nextNonSpace()
 
             if (c == '}') {
-                return Tag.valueOf(map)
+                return SnbtTag.valueOf(map)
             } else if (c == ',' || c == '\n') {
                 continue
             }

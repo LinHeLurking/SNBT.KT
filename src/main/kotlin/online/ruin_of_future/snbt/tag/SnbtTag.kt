@@ -5,10 +5,10 @@ enum class TagId {
     DOUBLE, BYTE_ARRAY, STRING, LIST, COMPOUND, INT_ARRAY, LONG_ARRAY,
 }
 
-class Tag(val id: TagId, var value: Any?) {
+class SnbtTag(val id: TagId, var value: Any?) {
 
     companion object {
-        inline fun <reified T> valueOf(v: T): Tag {
+        inline fun <reified T> valueOf(v: T): SnbtTag {
             return when (v) {
                 is Boolean -> {
                     val b = if (v) {
@@ -16,26 +16,26 @@ class Tag(val id: TagId, var value: Any?) {
                     } else {
                         0
                     }
-                    Tag(TagId.BYTE, b.toByte())
+                    SnbtTag(TagId.BYTE, b.toByte())
                 }
 
-                is Byte -> Tag(TagId.BYTE, v)
-                is Short -> Tag(TagId.SHORT, v)
-                is Int -> Tag(TagId.INT, v)
-                is Long -> Tag(TagId.LONG, v)
-                is Float -> Tag(TagId.FLOAT, v)
-                is Double -> Tag(TagId.DOUBLE, v)
-                is ByteArray -> Tag(TagId.BYTE_ARRAY, v)
-                is String -> Tag(TagId.STRING, v)
-                is List<*> -> Tag(TagId.LIST, v)
-                is IntArray -> Tag(TagId.INT_ARRAY, v)
-                is LongArray -> Tag(TagId.LONG_ARRAY, v)
-                is Map<*, *> -> Tag(TagId.COMPOUND, v)
+                is Byte -> SnbtTag(TagId.BYTE, v)
+                is Short -> SnbtTag(TagId.SHORT, v)
+                is Int -> SnbtTag(TagId.INT, v)
+                is Long -> SnbtTag(TagId.LONG, v)
+                is Float -> SnbtTag(TagId.FLOAT, v)
+                is Double -> SnbtTag(TagId.DOUBLE, v)
+                is ByteArray -> SnbtTag(TagId.BYTE_ARRAY, v)
+                is String -> SnbtTag(TagId.STRING, v)
+                is List<*> -> SnbtTag(TagId.LIST, v)
+                is IntArray -> SnbtTag(TagId.INT_ARRAY, v)
+                is LongArray -> SnbtTag(TagId.LONG_ARRAY, v)
+                is Map<*, *> -> SnbtTag(TagId.COMPOUND, v)
                 else -> throw Exception("Not support nbt type")
             }
         }
 
-        val END_INSTANCE = Tag(TagId.END, null)
+        val END_INSTANCE = SnbtTag(TagId.END, null)
     }
 
     fun isNumeric(): Boolean {
@@ -46,19 +46,19 @@ class Tag(val id: TagId, var value: Any?) {
         return "Tag(id = $id, value = $value)"
     }
 
-    operator fun get(key: String): Tag? {
+    operator fun get(key: String): SnbtTag? {
         if (id != TagId.COMPOUND) {
             throw IllegalStateException("Only compound tag supports get by key!")
         }
         val map = value as Map<*, *>
-        return (map[key] as Tag?)
+        return (map[key] as SnbtTag?)
     }
 
     override fun equals(other: Any?): Boolean {
         if (this === other) return true
         if (javaClass != other?.javaClass) return false
 
-        other as Tag
+        other as SnbtTag
 
         if (id != other.id) return false
         if (value != other.value) return false
@@ -181,34 +181,34 @@ class Tag(val id: TagId, var value: Any?) {
         return toLongArrayOrNull() ?: throw TagConvertException(id, LongArray::class)
     }
 
-    fun toListOrNull(): List<Tag>? {
+    fun toListOrNull(): List<SnbtTag>? {
         return if (id == TagId.LIST) {
-            value as List<Tag>
+            value as List<SnbtTag>
         } else {
             null
         }
     }
 
-    fun toList(): List<Tag> {
+    fun toList(): List<SnbtTag> {
         return toListOrNull() ?: throw TagConvertException(id, List::class)
     }
 
-    fun toMapOrNull(): Map<String, Tag>? {
+    fun toMapOrNull(): Map<String, SnbtTag>? {
         return if (id == TagId.COMPOUND) {
-            value as Map<String, Tag>
+            value as Map<String, SnbtTag>
         } else {
             null
         }
     }
 
-    fun toMap(): Map<String, Tag> {
+    fun toMap(): Map<String, SnbtTag> {
         return toMapOrNull() ?: throw TagConvertException(id, Map::class)
     }
 
     fun recursiveUnwrap(): Map<String, Any?> {
         val map = toMap().toMutableMap() as MutableMap<String, Any?>
         map.replaceAll { _, v ->
-            v as Tag
+            v as SnbtTag
             return@replaceAll if (v.id == TagId.COMPOUND) {
                 v.recursiveUnwrap()
             } else {

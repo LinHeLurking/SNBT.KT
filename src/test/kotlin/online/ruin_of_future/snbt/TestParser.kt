@@ -1,7 +1,7 @@
 package online.ruin_of_future.snbt
 
 import online.ruin_of_future.snbt.parser.SnbtParser
-import online.ruin_of_future.snbt.tag.Tag
+import online.ruin_of_future.snbt.tag.SnbtTag
 import online.ruin_of_future.snbt.tag.TagId
 import org.junit.jupiter.api.Test
 import java.io.BufferedReader
@@ -83,7 +83,7 @@ class TestParser {
         // List check
         assert(tag["testList"]?.value is List<*>)
         assert(tag["testList"]?.id == TagId.LIST)
-        val testList = tag["testList"]?.value as List<Tag>
+        val testList = tag["testList"]?.value as List<SnbtTag>
         assert(testList.size == 3)
         assert(testList[0].value == "a@+0- \\\"string\\\" Lat's 1")
         assert(testList[1].value == "b \$%*& \"string\" 2")
@@ -100,7 +100,7 @@ class TestParser {
         // List of CompoundTag test
         assert(tag["testListCompound"]?.value is List<*>)
         assert(tag["testListCompound"]?.id == TagId.LIST)
-        val testListCompound = tag["testListCompound"]?.value as List<Tag>
+        val testListCompound = tag["testListCompound"]?.value as List<SnbtTag>
         assert(testListCompound.size == 3)
         testListCompound.forEach {
             assert(it.id == TagId.COMPOUND)

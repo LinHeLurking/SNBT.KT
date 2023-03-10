@@ -5,8 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4d28b922-adfa-445c-bb6f-34b9a18ba49a" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/online/ruin_of_future/snbt/tag/Tag.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/online/ruin_of_future/snbt/tag/Tag.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/online/ruin_of_future/snbt/parser/SnbtParser.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/online/ruin_of_future/snbt/parser/SnbtParser.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/online/ruin_of_future/snbt/parser/SpecialTag.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/online/ruin_of_future/snbt/parser/SpecialTag.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/online/ruin_of_future/snbt/tag/Tag.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/online/ruin_of_future/snbt/tag/Tag.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/online/ruin_of_future/snbt/tag/SnbtTag.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/online/ruin_of_future/snbt/TestParser.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/online/ruin_of_future/snbt/TestParser.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,6 +102,7 @@
       <workItem from="1678268618632" duration="5644000" />
       <workItem from="1678274490879" duration="648000" />
       <workItem from="1678342321822" duration="15873000" />
+      <workItem from="1678430007966" duration="271000" />
     </task>
     <servers />
   </component>
