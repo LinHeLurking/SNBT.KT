@@ -204,5 +204,18 @@ class Tag(val id: TagId, var value: Any?) {
     fun toMap(): Map<String, Tag> {
         return toMapOrNull() ?: throw TagConvertException(id, Map::class)
     }
+
+    fun recursiveUnwrap(): Map<String, Any?> {
+        val map = toMap().toMutableMap() as MutableMap<String, Any?>
+        map.replaceAll { _, v ->
+            v as Tag
+            return@replaceAll if (v.id == TagId.COMPOUND) {
+                v.recursiveUnwrap()
+            } else {
+                v.value
+            }
+        }
+        return map
+    }
 }
 
