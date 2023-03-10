@@ -52,15 +52,18 @@ publishing {
 
     repositories {
         maven {
-            name = "LocalRepo"
-            val releasesRepoUrl = uri(layout.buildDirectory.dir("repos/releases"))
-            val snapshotsRepoUrl = uri(layout.buildDirectory.dir("repos/snapshots"))
+            val releasesRepoUrl = uri("https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/")
+            val snapshotsRepoUrl = uri("https://s01.oss.sonatype.org/content/repositories/snapshots/")
             url = if (version.toString().endsWith("SNAPSHOT")) snapshotsRepoUrl else releasesRepoUrl
+            credentials {
+                username = property("ossrhUsername") as String
+                password = property("ossrhPassword") as String
+            }
         }
     }
 }
 
 signing {
     useGpgCmd()
-    sign(publishing.publications["snbt"])
+    sign(configurations.archives.get())
 }

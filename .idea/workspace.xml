@@ -5,16 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4d28b922-adfa-445c-bb6f-34b9a18ba49a" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/online/ruin_of_future/snbt/parser/ParseException.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/io/github/linhelurking/snbt/parser/ParseException.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/online/ruin_of_future/snbt/parser/SnbtParser.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/io/github/linhelurking/snbt/parser/SnbtParser.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/online/ruin_of_future/snbt/parser/SpecialTag.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/io/github/linhelurking/snbt/parser/SpecialTag.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/online/ruin_of_future/snbt/parser/Util.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/io/github/linhelurking/snbt/parser/Util.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/online/ruin_of_future/snbt/tag/SnbtTag.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/io/github/linhelurking/snbt/tag/SnbtTag.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/online/ruin_of_future/snbt/tag/TagConvertException.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/io/github/linhelurking/snbt/tag/TagConvertException.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/online/ruin_of_future/snbt/TestParser.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/io/github/linhelurking/snbt/TestParser.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,7 +85,7 @@
       <recent name="E:\KtSnbt\KtSnbt\src\test\resources" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.test">
+  <component name="RunManager" selected="Gradle.publish">
     <configuration name="clean" type="GradleRunConfiguration" factoryName="Gradle">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -106,6 +98,27 @@
         <option name="taskNames">
           <list>
             <option value="clean" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="publish" type="GradleRunConfiguration" factoryName="Gradle">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="publish" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -160,6 +173,7 @@
     <list>
       <item itemvalue="Gradle.publishToMavenLocal" />
       <item itemvalue="Gradle.clean" />
+      <item itemvalue="Gradle.publish" />
       <item itemvalue="Gradle.test" />
     </list>
     <recent_temporary>
@@ -188,7 +202,7 @@
       <workItem from="1678437266577" duration="4987000" />
       <workItem from="1678442699414" duration="142000" />
       <workItem from="1678442862992" duration="47000" />
-      <workItem from="1678442932896" duration="1519000" />
+      <workItem from="1678442932896" duration="3335000" />
     </task>
     <servers />
   </component>
