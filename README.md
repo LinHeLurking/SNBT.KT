@@ -2,7 +2,7 @@
 
 ![](https://github.com/LinHeLurking/SNBT.KT/actions/workflows/gradle.yml/badge.svg)
 
-This is a SNBT file parser & converter for Kotlin language.
+This is a SNBT file parser & converter for Kotlin language. Copied and modified from [FTB-Library](https://github.com/FTBTeam/FTB-Library). This is a standalone library which provides SNBT parse ability without dependencies from Minecraft itself.
 
 ## Setup
 
