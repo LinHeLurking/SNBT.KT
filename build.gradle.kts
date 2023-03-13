@@ -46,7 +46,7 @@ publishing {
                     }
                 }
             }
-            from(components["kotlin"])
+            from(components["java"])
         }
     }
 

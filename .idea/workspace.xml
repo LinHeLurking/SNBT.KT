@@ -85,7 +85,7 @@
       <recent name="E:\KtSnbt\KtSnbt\src\test\resources" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.test">
+  <component name="RunManager" selected="Gradle.publish">
     <configuration name="clean" type="GradleRunConfiguration" factoryName="Gradle">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -203,7 +203,8 @@
       <workItem from="1678442699414" duration="142000" />
       <workItem from="1678442862992" duration="47000" />
       <workItem from="1678442932896" duration="4303000" />
-      <workItem from="1678447491378" duration="315000" />
+      <workItem from="1678447491378" duration="686000" />
+      <workItem from="1678672298977" duration="134000" />
     </task>
     <servers />
   </component>
