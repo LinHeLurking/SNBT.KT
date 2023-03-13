@@ -65,5 +65,8 @@ publishing {
 
 signing {
     useGpgCmd()
-    sign(configurations.archives.get())
+    // This is correct. Sign for `configurations.archives` won't work.
+    publishing.publications.forEach {
+        sign(it)
+    }
 }
