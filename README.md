@@ -6,20 +6,21 @@ This is a SNBT file parser & converter for Kotlin language.
 
 ## Basic Usage
 
-> See [Tests](https://github.com/LinHeLurking/SNBT.KT/blob/main/src/test/kotlin/online/ruin_of_future/snbt/TestParser.kt) for more details.
-
+>
+See [Tests](https://github.com/LinHeLurking/SNBT.KT/blob/main/src/test/kotlin/online/ruin_of_future/snbt/TestParser.kt)
+for more details.
 
 ```Kotlin
-# Build parser from file path or collection of lines
-val parser = SnbtParser(...)
+// Build parser from file path or collection of lines
+val parser = SnbtParser("...")
 
-# A compound tag is read
+// A compound tag is read
 val tag = parser.read()
 
-# Get compound tag field
+// Get compound tag field
 val value = tag["key"]
 
-# Each tag has an `id` and `value` field
+// Each tag has an `id` and `value` field
 println(value.id)
 println(value.value)
 ```
