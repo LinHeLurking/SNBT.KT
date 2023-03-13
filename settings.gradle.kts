@@ -1,3 +1,2 @@
-
-rootProject.name = "KtSnbt"
+rootProject.name = "kt-snbt"
 

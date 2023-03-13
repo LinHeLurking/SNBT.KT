@@ -1,11 +1,12 @@
 plugins {
     kotlin("jvm") version "1.8.0"
+    java
     `maven-publish`
     signing
 }
 
 group = "io.github.linhelurking"
-version = "0.1.0"
+version = "0.1.1"
 
 repositories {
     mavenCentral()
@@ -23,11 +24,34 @@ kotlin {
     jvmToolchain(17)
 }
 
+tasks.compileKotlin {
+    kotlinOptions {
+        jvmTarget = "17"
+    }
+}
+
+tasks.publishToMavenLocal {
+    dependsOn(tasks["jar"])
+}
+
+tasks.publish {
+    dependsOn(tasks["jar"])
+}
+
+val sourceJar by tasks.registering(Jar::class) {
+    from(sourceSets["main"].allSource)
+}
+
+val javadocJar by tasks.registering(Jar::class) {
+    dependsOn(tasks.javadoc)
+    from(tasks.javadoc.get())
+}
+
 publishing {
     publications {
-        create<MavenPublication>("snbt") {
+        create<MavenPublication>("Maven") {
             pom {
-                name.set("snbt")
+                name.set("kt-snbt")
                 description.set("A SNBT file reader for Kotlin language")
                 url.set("https://github.com/LinHeLurking/SNBT.KT")
 
@@ -45,8 +69,21 @@ publishing {
                         email.set("LinHe.Lurking@gmail.com")
                     }
                 }
+
+                // Must provide scm information. Otherwise, POM validation fails.
+                scm {
+                    connection.set("git@github.com:LinHeLurking/SNBT.KT.git")
+                    developerConnection.set("git@github.com:LinHeLurking/SNBT.KT.git")
+                    url.set("https://github.com/LinHeLurking/SNBT.KT")
+                }
             }
-            from(components["java"])
+            artifact(tasks["jar"])
+            artifact(sourceJar) {
+                classifier = "sources"
+            }
+            artifact(javadocJar) {
+                classifier = "javadoc"
+            }
         }
     }
 
