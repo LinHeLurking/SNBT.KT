@@ -9,13 +9,13 @@ This is a SNBT file parser & converter for Kotlin language. Copied and modified 
 Gradle Kotlin DSL:
 
 ```Kotlin
-implementation("io.github.linhelurking:kt-snbt:0.1.1")
+implementation("io.github.linhelurking:kt-snbt:0.1.2")
 ```
 
 Gradle Groovy DSL
 
 ```Groovy
-implementation group: 'io.github.linhelurking', name: 'kt-snbt', version: '0.1.1'
+implementation group: 'io.github.linhelurking', name: 'kt-snbt', version: '0.1.2'
 ```
 
 
