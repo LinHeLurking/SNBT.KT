@@ -1,12 +1,13 @@
 plugins {
     kotlin("jvm") version "1.8.0"
-    java
+    // java-library instead of java is the key to publish primary jar of kotlin codes.
+    `java-library`
     `maven-publish`
     signing
 }
 
 group = "io.github.linhelurking"
-version = "0.1.1"
+version = "0.1.2"
 
 repositories {
     mavenCentral()
@@ -24,27 +25,15 @@ kotlin {
     jvmToolchain(17)
 }
 
+java {
+    withSourcesJar()
+    withJavadocJar()
+}
+
 tasks.compileKotlin {
     kotlinOptions {
         jvmTarget = "17"
     }
-}
-
-tasks.publishToMavenLocal {
-    dependsOn(tasks["jar"])
-}
-
-tasks.publish {
-    dependsOn(tasks["jar"])
-}
-
-val sourceJar by tasks.registering(Jar::class) {
-    from(sourceSets["main"].allSource)
-}
-
-val javadocJar by tasks.registering(Jar::class) {
-    dependsOn(tasks.javadoc)
-    from(tasks.javadoc.get())
 }
 
 publishing {
@@ -77,13 +66,7 @@ publishing {
                     url.set("https://github.com/LinHeLurking/SNBT.KT")
                 }
             }
-            artifact(tasks["jar"])
-            artifact(sourceJar) {
-                classifier = "sources"
-            }
-            artifact(javadocJar) {
-                classifier = "javadoc"
-            }
+            from(components["java"])
         }
     }
 
