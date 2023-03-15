@@ -1,6 +1,5 @@
-package io.github.linhelurking.snbt
+package io.github.linhelurking.snbt.parser
 
-import io.github.linhelurking.snbt.parser.SnbtParser
 import io.github.linhelurking.snbt.tag.SnbtTag
 import io.github.linhelurking.snbt.tag.TagId
 import org.junit.jupiter.api.Test
@@ -9,7 +8,7 @@ import java.io.InputStreamReader
 import java.nio.charset.StandardCharsets
 import java.util.stream.Collectors
 
-class TestParser {
+class ParserTest {
     @Test
     fun parse() {
         val stream = this.javaClass.getResourceAsStream("/test1.snbt")

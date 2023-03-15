@@ -43,6 +43,9 @@ class SnbtTag(val id: TagId, var value: Any?) {
     }
 
     override fun toString(): String {
+        if (id == TagId.STRING) {
+            return value as String
+        }
         return "Tag(id = $id, value = $value)"
     }
 
@@ -205,17 +208,22 @@ class SnbtTag(val id: TagId, var value: Any?) {
         return toMapOrNull() ?: throw TagConvertException(id, Map::class)
     }
 
-    fun recursiveUnwrap(): Map<String, Any?> {
-        val map = toMap().toMutableMap() as MutableMap<String, Any?>
-        map.replaceAll { _, v ->
-            v as SnbtTag
-            return@replaceAll if (v.id == TagId.COMPOUND) {
-                v.recursiveUnwrap()
-            } else {
-                v.value
-            }
+    fun unwrap(): Any? {
+        return when (id) {
+            TagId.BYTE -> toByte()
+            TagId.SHORT -> toShort()
+            TagId.INT -> toInt()
+            TagId.LONG -> toLong()
+            TagId.FLOAT -> toFloat()
+            TagId.DOUBLE -> toDouble()
+            TagId.BYTE_ARRAY -> toByteArray()
+            TagId.STRING -> toString()
+            TagId.INT_ARRAY -> toIntArray()
+            TagId.LONG_ARRAY -> toLongArray()
+            TagId.LIST -> toList().map { it.unwrap() }
+            TagId.COMPOUND -> toMap().mapValues { it.value.unwrap() }
+            else -> null
         }
-        return map
     }
 }
 

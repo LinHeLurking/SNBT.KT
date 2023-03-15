@@ -8,7 +8,6 @@ package io.github.linhelurking.snbt.parser
 import io.github.linhelurking.snbt.tag.SnbtTag
 import io.github.linhelurking.snbt.tag.TagId
 import java.io.File
-import java.io.FileNotFoundException
 
 class SnbtParser(lines: Iterable<String>) {
     private var pos = 0
@@ -29,15 +28,9 @@ class SnbtParser(lines: Iterable<String>) {
         pos = 0
     }
 
-    companion object {
-        fun fromFile(path: String): SnbtParser {
-            val file = File(path)
-            if (!file.exists()) {
-                throw FileNotFoundException(path)
-            }
-            return SnbtParser(file.readLines())
-        }
-    }
+    constructor(file: File) : this(file.readLines())
+
+    constructor(path: String) : this(File(path))
 
     /*
     * Read all contents as a CompoundTag
