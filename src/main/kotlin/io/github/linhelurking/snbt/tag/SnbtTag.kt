@@ -43,9 +43,13 @@ class SnbtTag(val id: TagId, var value: Any?) {
     }
 
     override fun toString(): String {
-        if (id == TagId.STRING) {
-            return value as String
+        return when (id) {
+            TagId.END -> ""
+            else -> value.toString()
         }
+    }
+
+    fun tagRepr(): String {
         return "Tag(id = $id, value = $value)"
     }
 

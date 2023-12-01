@@ -5,12 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4d28b922-adfa-445c-bb6f-34b9a18ba49a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/kotlin/io/github/linhelurking/snbt/tag/SnbtTagTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/io/github/linhelurking/snbt/parser/SnbtParser.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/io/github/linhelurking/snbt/parser/SnbtParser.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/io/github/linhelurking/snbt/tag/SnbtTag.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/io/github/linhelurking/snbt/tag/SnbtTag.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/io/github/linhelurking/snbt/TestParser.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/io/github/linhelurking/snbt/parser/ParserTest.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,6 +62,10 @@
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "customColor": "",
+  "associatedIndex": 1
+}]]></component>
   <component name="ProjectId" id="2Mj6OThIxC2uuksw3sNNkA0Wwnp" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -77,8 +78,11 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
+    "android.gradle.sync.needed": "true",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -88,7 +92,7 @@
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.2",
     "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "settings.editor.selected.configurable": "preferences.keymap",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -106,8 +110,8 @@
       <recent name="io.github.linhelurking.snbt.tag" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.SnbtTagTest.unwrap">
-    <configuration name="SnbtTagTest.unwrap" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+  <component name="RunManager" selected="Gradle.test">
+    <configuration name="KtSnbt [build]" type="GradleRunConfiguration" factoryName="Gradle" nameIsGenerated="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -118,16 +122,15 @@
         </option>
         <option name="taskNames">
           <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;io.github.linhelurking.snbt.tag.SnbtTagTest.unwrap&quot;" />
+            <option value="build" />
           </list>
         </option>
         <option name="vmOptions" />
       </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
     <configuration name="clean" type="GradleRunConfiguration" factoryName="Gradle">
@@ -149,6 +152,7 @@
       <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
     <configuration name="publish" type="GradleRunConfiguration" factoryName="Gradle">
@@ -170,6 +174,7 @@
       <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
     <configuration name="publishToMavenLocal" type="GradleRunConfiguration" factoryName="Gradle">
@@ -191,6 +196,7 @@
       <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
     <configuration name="test" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
@@ -212,18 +218,18 @@
       <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
     <list>
       <item itemvalue="Gradle.publishToMavenLocal" />
       <item itemvalue="Gradle.clean" />
+      <item itemvalue="Gradle.KtSnbt [build]" />
       <item itemvalue="Gradle.publish" />
-      <item itemvalue="Gradle.SnbtTagTest.unwrap" />
       <item itemvalue="Gradle.test" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.SnbtTagTest.unwrap" />
         <item itemvalue="Gradle.test" />
       </list>
     </recent_temporary>
@@ -258,7 +264,12 @@
       <workItem from="1678680278846" duration="5523000" />
       <workItem from="1678782078153" duration="1151000" />
       <workItem from="1678856315527" duration="7000" />
-      <workItem from="1678858097696" duration="1291000" />
+      <workItem from="1678858097696" duration="2247000" />
+      <workItem from="1678861423289" duration="4000" />
+      <workItem from="1678861872998" duration="616000" />
+      <workItem from="1680600721623" duration="158000" />
+      <workItem from="1680601766975" duration="618000" />
+      <workItem from="1701396340843" duration="1953000" />
     </task>
     <servers />
   </component>
