@@ -5,10 +5,10 @@ enum class TagId {
     DOUBLE, BYTE_ARRAY, STRING, LIST, COMPOUND, INT_ARRAY, LONG_ARRAY,
 }
 
-class SnbtTag(val id: TagId, var value: Any?) {
+class SnbtTag private constructor(val id: TagId, var value: Any?) {
 
     companion object {
-        inline fun <reified T> valueOf(v: T): SnbtTag {
+        fun valueOf(v: Any?): SnbtTag {
             return when (v) {
                 is Boolean -> {
                     val b = if (v) {
@@ -30,7 +30,23 @@ class SnbtTag(val id: TagId, var value: Any?) {
                 is List<*> -> SnbtTag(TagId.LIST, v)
                 is IntArray -> SnbtTag(TagId.INT_ARRAY, v)
                 is LongArray -> SnbtTag(TagId.LONG_ARRAY, v)
-                is Map<*, *> -> SnbtTag(TagId.COMPOUND, v)
+                is Map<*, *> -> {
+                    if (v.isNotEmpty()) {
+                        if (v.keys.first() !is String) {
+                            throw Exception("Not support nbt type")
+                        }
+                    }
+                    val entries = v.map { (k, entry) -> k to valueOf(entry) }.toMap()
+                    val tag = SnbtTag(TagId.COMPOUND, entries)
+                    tag
+                }
+
+                null -> {
+                    SnbtTag(TagId.END, null)
+                }
+
+                is SnbtTag -> v
+
                 else -> throw Exception("Not support nbt type")
             }
         }
@@ -212,6 +228,7 @@ class SnbtTag(val id: TagId, var value: Any?) {
         return toMapOrNull() ?: throw TagConvertException(id, Map::class)
     }
 
+    @Deprecated("Unwrap gives Any type, which is useless for nested tags because extra type checks are needed.")
     fun unwrap(): Any? {
         return when (id) {
             TagId.BYTE -> toByte()
@@ -225,7 +242,7 @@ class SnbtTag(val id: TagId, var value: Any?) {
             TagId.INT_ARRAY -> toIntArray()
             TagId.LONG_ARRAY -> toLongArray()
             TagId.LIST -> toList().map { it.unwrap() }
-            TagId.COMPOUND -> toMap().mapValues { it.value.unwrap() }
+            TagId.COMPOUND -> toMap().map { (k, v) -> k to v.unwrap() }.toMap()
             else -> null
         }
     }
